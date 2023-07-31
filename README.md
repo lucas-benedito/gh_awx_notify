@@ -1,7 +1,7 @@
 # gh_awx_notify
 A notifier for the current state of releases and PRs
 
-create an .env with and `source .env`  or export prior to running the python code
+create an .env with the code below and `source .env` or export prior to running the python code
 ```
 export SLACK_BOT_TOKEN="xoxb-xxxxxxx"
 export GH_TOKEN="ghp_xxxxxx"
