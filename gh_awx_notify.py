@@ -1,6 +1,5 @@
 import os
 from pathlib import Path
-from dotenv import load_dotenv
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 from modules import release_status
@@ -21,9 +20,9 @@ def process_request(channel_id, user_id, ts):
         message += f"*{releaseOutput[releases]['tag']}:*\n*Open PRs: {releaseOutput[releases]['opened_pr_count']}*\n\n"
         if releaseOutput[releases]["opened_prs"]:
             for item in releaseOutput[releases]["opened_prs"]:
-                prdata += f"- {item['title']}\n  {item['author']}   {item['link']}\n"
+                prdata += f">:small_blue_diamond: *{item['title']}*\n>  *{item['author']}*   {item['link']}\n"
         if prdata:
-            message += f"```\n{prdata}```\n\n"
+            message += f"\n{prdata}\n\n"
         print(message)
     try:
         client.chat_postMessage(channel=channel_id, thread_ts=ts, text=message)
