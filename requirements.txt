@@ -1,0 +1,6 @@
+slack-sdk
+python-dotenv
+flask
+black
+requests
+semantic_version
